@@ -1,0 +1,6 @@
+This project, Repo-Searcher, is a python script that searches the local 
+repository on the computer for a given program, and only returns results for 
+programs that aren't currently installed. 
+
+Created by: Michael Yanovich
+Significant help from: Morgan Goose
