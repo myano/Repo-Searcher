@@ -6,7 +6,9 @@ With help from: Morgan Goose
 Copyright 2010, Michael Yanovich and Morgan Goose
 License: GNU General Public License v3, http://www.gnu.org/licenses/
 
-DESCRIPTION: This script aims to only display items that are searched for that are not currently installed on the current machine. This is originally designed to work only on Fedora 13.
+DESCRIPTION: This script aims to only display items that are searched for that 
+are not currently installed on the current machine. This is originally designed 
+to work only on Fedora 13.
 """
 import os, sys
 import subprocess
