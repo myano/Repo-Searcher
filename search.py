@@ -10,6 +10,7 @@ DESCRIPTION: This script aims to only display items that are searched for that
 are not currently installed on the current machine. This is originally designed 
 to work only on Fedora 13.
 """
+
 import os, sys
 import subprocess
 
@@ -19,7 +20,8 @@ def f_yum():
     This works on systems with yum installed.
     Provided by: Morgan Goose
     '''
-    import yum
+    import yum # change by mike: moved this inside the function so the script 
+    # doesn't make an error on non-yum systems.
 
     yb = yum.YumBase()
     yb.setCacheDir()
@@ -43,7 +45,7 @@ def f_yum():
             print "%s : %s" % (pkg.name, pkg.summary)
             seen.add(pkg.name)
 
-    print '%s COMPLETED %s' % tuple(['-' * 30] * 2)
+    print '%s Completed %s' % tuple(['-' * 30] * 2)
 
 if __name__ == '__main__':
     '''
@@ -52,8 +54,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print "Invalid number of parameters, please enter in the form of './server.py <search terms>'"
     else:
-        p = subprocess.Popen('which yum', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)  
-        if not " no " in p.stdout.readlines()[0]:
+        try:
             f_yum()
-        else:
+        except:
             print "You do not have a supported package-management utility."
