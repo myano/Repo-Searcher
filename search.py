@@ -7,8 +7,9 @@ Copyright 2010, Michael Yanovich and Morgan Goose
 License: GNU General Public License v3, http://www.gnu.org/licenses/
 
 DESCRIPTION: This script aims to only display items that are searched for that 
-are not currently installed on the current machine. This is originally designed 
-to work only on Fedora 13.
+are not currently installed on the current machine. 
+
+This was originally designed to work only on Fedora 13.
 """
 
 import os, sys
@@ -20,8 +21,11 @@ def f_yum():
     This works on systems with yum installed.
     Provided by: Morgan Goose
     '''
-    import yum # change by mike: moved this inside the function so the script 
+
+    # change by mike: moved this inside the function so the script 
     # doesn't make an error on non-yum systems.
+
+    import yum
 
     yb = yum.YumBase()
     yb.setCacheDir()
@@ -51,6 +55,7 @@ if __name__ == '__main__':
     '''
     Steps to determine which package-management utility is installed.
     '''
+
     if len(sys.argv) < 2:
         print "Invalid number of parameters, please enter in the form of './server.py <search terms>'"
     else:
