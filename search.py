@@ -62,4 +62,4 @@ if __name__ == '__main__':
         try:
             f_yum()
         except:
-            print "You do not have a supported package-management utility."
+            print "We currently do not support your package manager at this time."
