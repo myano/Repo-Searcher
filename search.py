@@ -9,7 +9,7 @@ License: GNU General Public License v3, http://www.gnu.org/licenses/
 DESCRIPTION: This script aims to only display items that are searched for that 
 are not currently installed on the current machine. 
 
-This was originally designed to work only on Fedora 13.
+This was originally designed to work only on Fedora.
 """
 
 import os, sys
